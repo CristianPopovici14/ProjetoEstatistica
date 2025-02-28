@@ -21,7 +21,7 @@ O projeto utiliza Django, um framework web baseado em Python, para gerir os pág
 
 Os arquivos principais do projeto incluem:
 
-- `models.py`: Define as classes que representam os inquéritos e perguntas no banco de dados.
+- `forms.py`: Define as classes que representam os inquéritos e perguntas no banco de dados.
 - `views.py`: Contém as funções que controlam a lógica das requisições e respostas do usuário, chamadas views.
 - `urls.py`: Mapeia as URLs para as views correspondentes.
 - `admin.py`: Configura a interface administrativa do Django para gerenciamento de inquéritos.
