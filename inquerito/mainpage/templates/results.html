@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+</head>
+<body>
+    <a href="/export/">Exportar csv</a>
+    <h1>Dados</h1>
+    <ul>
+        {% for response in responses %}
+            <li>
+                {{ response.socialtime }} | {{ response.sleeptime }}
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

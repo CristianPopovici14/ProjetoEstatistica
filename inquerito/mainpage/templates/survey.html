@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Survey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+        }
+
+        .survey-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        .survey-container h1 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #333;
+            text-align: center;
+        }
+
+        .survey-container label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .survey-container input[type="text"],
+        .survey-container input[type="email"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .survey-container button {
+            width: 100%;
+            padding: 0.75rem;
+            background: #4caf50;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .survey-container button:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="survey-container">
+        <h1>Questionário rápido sobre sustentabilidade</h1>
+        <form method="POST" action="{% url 'survey' %}">
+            {% csrf_token %}
+
+            <!-- First Question -->
+            <label for="id_socialtime">1. Quanto tempo passas nas redes sociais por dia? (Youtube, TikTok, X, Instagram, etc)</label>
+            {{ form.socialtime }}
+
+            <!-- Second Question -->
+            <label for="id_sleeptime">2. Quanto tempo dormes?</label>
+            {{ form.sleeptime }}
+
+            <button type="submit">Responder</button>
+        </form>
+    </div>
+</body>
+</html>
